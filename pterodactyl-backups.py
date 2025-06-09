@@ -13,6 +13,7 @@ import shutil                                                   # For file opera
 import argparse                                                # For command-line argument parsing
 
 # Configure logging with both console and file output
+os.makedirs('logs', exist_ok=True)
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(levelname)s - %(message)s',
