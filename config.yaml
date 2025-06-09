@@ -1,0 +1,22 @@
+---
+# Define general settings for the application
+settings:
+  volumes_path: "/var/lib/pterodactyl/volumes"      # Location where pterodactyl container volumes are stored
+  pbs_repository: "user@pbs!token@host:port:store"  # PBS Repository, refer to https://pbs.proxmox.com/docs/backup-client.html
+  pbs_namespace: "pterodactyl-backups"              # Namespace for backups within PBS
+  pbs_key: "12345678-abcd-efgh-ijkl-123456789012"   # API-Key or Password for PBS Repository
+# Define servers to be backed up
+servers:
+  d5f26b25:                                         # Server ID, as visible in Pterodactyl UI / URL
+    name: Minecraft PaperMC                         # Display Name (currently unused)
+    schedule: "0 6 * * *"                           # Backup schedule in CRON syntax
+    shutdown: true                                  # Whether or not to shutdown the server for the duration of the backup
+    ignore_paths:                                   # List of paths, relative to the container's directory within volumes_path, to exclude from the backup
+      - plugins/dynmap/web/tiles/world
+      - plugins/dynmap/web/tiles/world_nether
+      - plugins/dynmap/web/tiles/world_the_end
+  49fe9326:
+    name: Garrys Mod
+    schedule: "0 6 * * MON"
+    shutdown: false
+    ignore_paths:
