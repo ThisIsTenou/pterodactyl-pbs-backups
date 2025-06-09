@@ -69,7 +69,7 @@ cd pterodactyl-pbs-backups
 Copy and edit the example config file:
 
 ```bash
-cp config.yaml.example config.yaml
+cp config-example.yaml config.yaml
 nano config.yaml
 ```
 
