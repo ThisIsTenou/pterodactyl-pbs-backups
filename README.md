@@ -182,7 +182,7 @@ Console output is also captured when running manually or via systemd.
 
 ## Limitations
 
-- Only tested on **Ubuntu 24.04** and **Debian 12+**
+- Only tested on **Ubuntu 24.04**
 - Requires valid setup of Proxmox Backup Server credentials
 - Earlier Ubuntu versions may not work due to library conflicts with PBS client
 
