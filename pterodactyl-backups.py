@@ -163,8 +163,7 @@ def backup_server(server_id, config):
         ignore_paths = config.get("ignore_paths", [])
         if ignore_paths:
             for rel_path in ignore_paths:
-                abs_path = os.path.join(container_path, rel_path)
-                exclude_args.extend(["--exclude", abs_path])
+                exclude_args.extend(["--exclude", f"\"/{rel_path}\""])
 
         # Construct backup command
         cmd = [
